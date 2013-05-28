@@ -1,0 +1,4 @@
+DropsProtection:
+  Enabled: true
+  Protection time: 60
+  Pickup denied message: That item belongs to %owner%.
