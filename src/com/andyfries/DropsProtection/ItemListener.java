@@ -59,11 +59,15 @@ public class ItemListener implements Listener {
                     }
                 }
 
-                if (!owner.equals(player.getName()) && !player.hasPermission("dropsprotection.bypass") && (event.getItem().getTicksLived()/20 < timeProtected)){
+                int timeLeft = timeProtected - event.getItem().getTicksLived()/20;
+                if (!owner.equals(player.getName()) && !player.hasPermission("dropsprotection.bypass") && (timeLeft > 0)){
                     //player trying to pick up item doesn't own it
                     if (event.getItem().getTicksLived()%20 == 0){
                         //send player a message every second
-                        player.sendMessage(deniedMsg.replace("%owner%", owner));
+                        String deniedMsgModified = deniedMsg.replace("$owner", owner);
+                        deniedMsgModified = deniedMsgModified.replace("$timeLeft", String.valueOf(timeLeft));
+                        deniedMsgModified = deniedMsgModified.replace("$itemName", event.getItem().getItemStack().getType().name().replace("_", " ").toLowerCase());
+                        player.sendMessage(deniedMsgModified);
                     }
                     event.setCancelled(true);
                 }

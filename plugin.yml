@@ -8,5 +8,5 @@ commands:
         /dp [on/off] - enable/disable plugin
         /dp reload - reload options from config file
         /dp settimer [seconds] - set protection time for drops
-        /dp setmessage [message] - set pickup denied message (can use %owner% to show item owner)
+        /dp setmessage [message] - set pickup denied message (can use %owner%, %timeLeft%, and %itemName% variables in message)
       permission-message: You don't have <permission> permission
