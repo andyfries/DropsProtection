@@ -1,0 +1,29 @@
+name: DropsProtection
+main: com.andyfries.DropsProtection.DropsProtection
+version: 1.0
+commands:
+  dp reload
+    description: Reload options from config file
+    usage: /dp reload
+    permission: DropsProtection.reload
+    permission-message: You don't have <permission> permission
+  dp on
+    description: Enable plugin
+    usage: /dp on
+    permission: DropsProtection.toggle
+    permission-message: You don't have <permission> permission
+  dp off
+    description: Disable plugin
+    usage: /dp off
+    permission: DropsProtection.toggle
+    permission-message: You don't have <permission> permission
+  dp settimer
+    description: Set protection time for drops
+    usage: /dp settimer [seconds]
+    permission: DropsProtection.settimer
+    permission-message: You don't have <permission> permission
+  dp setmessage
+    description: Set pickup denied message. Can use %owner% to print owner of item.
+    usage: /dp setmessage [message]
+    permission: DropsProtection.setmessage
+    permission-message: You don't have <permission> permission
